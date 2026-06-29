@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   record:
-    name: Record goldens → release-${{ github.head_ref }}
+    name: Record goldens → ${{ github.head_ref }}-screenshot-record
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -45,9 +45,9 @@ jobs:
       - name: Record Paparazzi goldens
         run: ./gradlew recordPaparazziDebug --stacktrace
 
-      - name: Push goldens to release branch
+      - name: Push goldens to screenshot-record branch
         env:
-          RELEASE_BRANCH: release-${{ github.head_ref }}
+          RECORD_BRANCH: ${{ github.head_ref }}-screenshot-record
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -56,12 +56,12 @@ jobs:
           git add app/src/test/snapshots/
 
           if git diff --staged --quiet; then
-            echo "::notice::No golden changes — release branch not updated."
+            echo "::notice::No golden changes — screenshot-record branch not updated."
             exit 0
           fi
 
           # Branch off the current PR HEAD, commit only the golden changes,
           # then force-push so re-runs on the same PR always reflect the latest.
-          git checkout -B "$RELEASE_BRANCH"
+          git checkout -B "$RECORD_BRANCH"
           git commit -m "chore: record Paparazzi goldens for ${{ github.head_ref }} [skip ci]"
-          git push origin "$RELEASE_BRANCH" --force-with-lease
+          git push origin "$RECORD_BRANCH" --force-with-lease
