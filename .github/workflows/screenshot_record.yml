@@ -3,7 +3,8 @@ name: Screenshot Tests — Record
 on:
   pull_request:
     types: [opened, synchronize]
-    branches: [main, master]
+    branches:
+      - 'release-**'
     paths:
       - 'app/src/main/**'
       - 'app/src/test/**'
