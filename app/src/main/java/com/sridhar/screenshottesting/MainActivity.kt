@@ -70,7 +70,7 @@ fun ScreenshotTesting(title: String) {
                                 contentDescription = it.label
                             )
                         },
-                        label = { Text(it.label) },
+                        label = { Text(text = it.label) },
                         selected = it == currentDestination,
                         onClick = { currentDestination = it }
                     )
@@ -81,9 +81,7 @@ fun ScreenshotTesting(title: String) {
             modifier = Modifier.fillMaxSize(),
             topBar = {
                 TopAppBar(
-                    title = {
-                        Text(text = title)
-                    }
+                    title = { Text(text = title) }
                 )
             }
         ) { innerPadding ->
