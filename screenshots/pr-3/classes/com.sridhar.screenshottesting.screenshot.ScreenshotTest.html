@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ScreenshotTest</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ScreenshotTest</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.sridhar.screenshottesting.screenshot.html">com.sridhar.screenshottesting.screenshot</a> &gt; ScreenshotTest</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">8</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">8</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">6.342s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox failures" id="successRate">
+<div class="percent">0%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a class="" href="#">Failed tests</a>
+</li>
+<li>
+<a class="" href="#">Tests</a>
+</li>
+<li>
+<a class="" href="#">Standard output</a>
+</li>
+<li>
+<a class="" href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Failed tests</h2>
+<div class="test">
+<a name="imageScreen_dark"></a>
+<h3 class="failures">imageScreen_dark</h3>
+<span class="code">
+<pre id="imageScreen_dark-failure">java.lang.AssertionError: Images differ (by 19.427465%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.imageScreen_dark(ScreenshotTest.kt:46)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="imageScreen_dark-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="imageScreen_light"></a>
+<h3 class="failures">imageScreen_light</h3>
+<span class="code">
+<pre id="imageScreen_light-failure">java.lang.AssertionError: Images differ (by 24.671278%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.imageScreen_light(ScreenshotTest.kt:32)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="imageScreen_light-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="pdfScreen_dark"></a>
+<h3 class="failures">pdfScreen_dark</h3>
+<span class="code">
+<pre id="pdfScreen_dark-failure">java.lang.AssertionError: Images differ (by 19.454472%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.pdfScreen_dark(ScreenshotTest.kt:73)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="pdfScreen_dark-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="pdfScreen_light"></a>
+<h3 class="failures">pdfScreen_light</h3>
+<span class="code">
+<pre id="pdfScreen_light-failure">java.lang.AssertionError: Images differ (by 24.575916%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.pdfScreen_light(ScreenshotTest.kt:59)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="pdfScreen_light-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="profileScreen_dark"></a>
+<h3 class="failures">profileScreen_dark</h3>
+<span class="code">
+<pre id="profileScreen_dark-failure">java.lang.AssertionError: Images differ (by 19.305603%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.profileScreen_dark(ScreenshotTest.kt:100)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="profileScreen_dark-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="profileScreen_light"></a>
+<h3 class="failures">profileScreen_light</h3>
+<span class="code">
+<pre id="profileScreen_light-failure">java.lang.AssertionError: Images differ (by 20.109154%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.profileScreen_light(ScreenshotTest.kt:86)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="profileScreen_light-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="watermarkScreen_dark"></a>
+<h3 class="failures">watermarkScreen_dark</h3>
+<span class="code">
+<pre id="watermarkScreen_dark-failure">java.lang.AssertionError: Images differ (by 19.033037%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.watermarkScreen_dark(ScreenshotTest.kt:132)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="watermarkScreen_dark-failure">Copy</button>
+</span>
+</div>
+<div class="test">
+<a name="watermarkScreen_light"></a>
+<h3 class="failures">watermarkScreen_light</h3>
+<span class="code">
+<pre id="watermarkScreen_light-failure">java.lang.AssertionError: Images differ (by 19.033037%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+	at app.cash.paparazzi.internal.ImageUtils.assertImageSimilar(ImageUtils.kt:128)
+	at app.cash.paparazzi.SnapshotVerifier$newFrameHandler$1.handle(SnapshotVerifier.kt:79)
+	at app.cash.paparazzi.Paparazzi.setup$lambda$0(Paparazzi.kt:119)
+	at app.cash.paparazzi.PaparazziSdk.takeSnapshots(PaparazziSdk.kt:374)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:210)
+	at app.cash.paparazzi.PaparazziSdk.snapshot$default(PaparazziSdk.kt:209)
+	at app.cash.paparazzi.PaparazziSdk.snapshot(PaparazziSdk.kt:205)
+	at app.cash.paparazzi.Paparazzi.snapshot(Paparazzi.kt:145)
+	at com.sridhar.screenshottesting.screenshot.ScreenshotTest.watermarkScreen_light(ScreenshotTest.kt:113)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:56)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at app.cash.paparazzi.Paparazzi$apply$1.evaluate(Paparazzi.kt:95)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.BlockJUnit4ClassRunner$1.evaluate(BlockJUnit4ClassRunner.java:100)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:366)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:103)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:63)
+	at org.junit.runners.ParentRunner$4.run(ParentRunner.java:331)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:79)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:329)
+	at org.junit.runners.ParentRunner.access$100(ParentRunner.java:66)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:293)
+	at org.junit.runners.ParentRunner$3.evaluate(ParentRunner.java:306)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:413)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:137)
+	at org.junit.runner.JUnitCore.run(JUnitCore.java:115)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.runRequest(JUnitTestExecutor.java:175)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:84)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestExecutor.accept(JUnitTestExecutor.java:47)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestDefinitionProcessor.processTestDefinition(AbstractJUnitTestDefinitionProcessor.java:65)
+	at org.gradle.api.internal.tasks.testing.SuiteTestDefinitionProcessor.processTestDefinition(SuiteTestDefinitionProcessor.java:53)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.gradle.internal.dispatch.MethodInvocation.invokeOn(MethodInvocation.java:77)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:28)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:19)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:33)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:88)
+	at jdk.proxy1/jdk.proxy1.$Proxy4.processTestDefinition(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker$2.run(TestWorker.java:178)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.executeAndMaintainThreadName(TestWorker.java:126)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:103)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.execute(TestWorker.java:63)
+	at org.gradle.process.internal.worker.child.ActionExecutionWorker.execute(ActionExecutionWorker.java:56)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:122)
+	at org.gradle.process.internal.worker.child.SystemApplicationClassLoaderWorker.call(SystemApplicationClassLoaderWorker.java:72)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.run(GradleWorkerMain.java:69)
+	at worker.org.gradle.process.internal.worker.GradleWorkerMain.main(GradleWorkerMain.java:74)
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="watermarkScreen_light-failure">Copy</button>
+</span>
+</div>
+</div>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="failures">imageScreen_dark</td>
+<td class="failures">0.411s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">imageScreen_light</td>
+<td class="failures">0.189s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">pdfScreen_dark</td>
+<td class="failures">0.187s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">pdfScreen_light</td>
+<td class="failures">0.229s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">profileScreen_dark</td>
+<td class="failures">0.251s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">profileScreen_light</td>
+<td class="failures">0.200s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">watermarkScreen_dark</td>
+<td class="failures">4.697s</td>
+<td class="failures">failed</td>
+</tr>
+<tr>
+<td class="failures">watermarkScreen_light</td>
+<td class="failures">0.178s</td>
+<td class="failures">failed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre id="class-stdout">Images differ (by 19.033037%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_dark_0.png
+Images differ (by 19.427465%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_dark_mountain_sunrise.png
+Images differ (by 24.671278%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_imageScreen_light_mountain_sunrise.png
+Images differ (by 19.305603%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_dark_alex_johnson.png
+Images differ (by 24.575916%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_light_android_development_guide.png
+Images differ (by 20.109154%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_profileScreen_light_alex_johnson.png
+Images differ (by 19.033037%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_watermarkScreen_light_0.png
+Images differ (by 19.454472%) - see details in file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/delta-com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+Thumbnail for current rendering stored at file:///home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+Run the following command to accept the changes:
+mv /home/runner/work/screenshot-testing/screenshot-testing/app/build/paparazzi/failures/debug/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png /home/runner/work/screenshot-testing/screenshot-testing/app/src/test/snapshots/images/com.sridhar.screenshottesting.screenshot_ScreenshotTest_pdfScreen_dark_android_development_guide.png
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stdout">Copy</button>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre id="class-stderr">WARNING: A Java agent has been loaded dynamically (/home/runner/.gradle/caches/9.4.1/transforms/2f0378c5e78b62dfa0bbf70a30ee5ca9/transformed/byte-buddy-agent-1.18.7.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.Toast&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;textColor&quot; in style &quot;NotificationAction&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification.Title&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification.BigTitle&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification.Reply&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification.Info&quot;
+Jun 29, 2026 4:59:22 PM app.cash.paparazzi.internal.resources.base.BasicStyleResourceItem &lt;init&gt;
+WARNING: Conflicting definitions of &quot;fontFamily&quot; in style &quot;TextAppearance.DeviceDefault.Notification.Time&quot;
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: SystemFonts [2]: Loading font config from /home/runner/.gradle/caches/9.4.1/transforms/f570783c3f20a6c0729bd375884634d1/transformed/layoutlib-runtime-16.2.1-linux/data/fonts/fonts.xml
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: SystemFonts [2]: Loading font config from /home/runner/.gradle/caches/9.4.1/transforms/f570783c3f20a6c0729bd375884634d1/transformed/layoutlib-runtime-16.2.1-linux/data/fonts/font_fallback.xml
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: HWUI [2]: Using Fontation backend (prop=Auto)
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: PlatformAconfigPackage [3]: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: PlatformAconfigPackage [3]: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: PlatformAconfigPackage [3]: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: PlatformAconfigPackage [3]: android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: FeatureFlagsImplExport [4]: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: FeatureFlagsImplExport [4]: android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.os.profiling.anomaly.flags cannot be found on the device
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:23 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:24 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:25 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: InputEventCompatHandler [2]: Input compatibility 413207127 is enabled for com.sridhar.screenshottesting
+Jun 29, 2026 4:59:26 PM app.cash.paparazzi.internal.PaparazziLogger logAndroidFramework
+INFO: ImageReader_JNI [3]: Unable to acquire a buffer item, very likely client tried to acquire more than maxImages buffers
+</pre>
+<button class="clipboard-copy-btn" aria-label="Copy to clipboard" data-copy-element-id="class-stderr">Copy</button>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 9.4.1</a> at Jun 29, 2026, 4:59:27 PM</p>
+</div>
+</div>
+</body>
+</html>
