@@ -1,7 +1,11 @@
 name: Screenshot Tests — Verify
 
+# One-time repo setup required:
+#   Settings → Pages → Branch: gh-pages, Folder: /(root)
+
 on:
   pull_request:
+    types: [opened, synchronize]
     branches:
       - 'release-**'
     paths:
@@ -19,7 +23,8 @@ jobs:
     name: Verify Paparazzi screenshots
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: write       # push to gh-pages
+      pull-requests: write  # post PR comment
 
     steps:
       - name: Checkout PR branch
@@ -59,29 +64,136 @@ jobs:
         if: steps.snapshots.outputs.empty == 'false'
         run: ./gradlew verifyPaparazziDebug --stacktrace
 
-      - name: Commit failure diffs to failures branch
-        if: failure()
+      - name: Generate HTML failure report
+        if: failure() && steps.snapshots.outputs.empty == 'false'
         env:
-          FAILURES_BRANCH: ${{ github.head_ref }}-screenshot-verify-failures
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          HEAD_REF: ${{ github.head_ref }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          python3 << 'PYEOF'
+          import os, base64, glob, pathlib
 
-          # Force-add failure diffs — build/ is gitignored so -f is required.
-          git add -f app/build/paparazzi/failures/
+          failures_dir = "app/build/paparazzi/failures"
+          snapshots_dir = "app/src/test/snapshots/images"
+          pr_number = os.environ["PR_NUMBER"]
+          head_ref   = os.environ["HEAD_REF"]
 
-          if git diff --staged --quiet; then
-            echo "::warning::Verify failed but no diff images were produced."
-            exit 0
-          fi
+          def data_uri(path):
+              if os.path.exists(path):
+                  with open(path, "rb") as f:
+                      return f"data:image/png;base64,{base64.b64encode(f.read()).decode()}"
+              return ""
 
-          git checkout -B "$FAILURES_BRANCH"
-          git commit -m "chore: Paparazzi verify failures for ${{ github.head_ref }} [skip ci]"
-          git push origin "$FAILURES_BRANCH" --force-with-lease
-          echo "::error::Screenshot diffs committed to branch: $FAILURES_BRANCH"
+          diff_files = sorted(
+              glob.glob(f"{failures_dir}/**/*.png", recursive=True) +
+              glob.glob(f"{failures_dir}/*.png")
+          )
 
-      - name: Delete failures branch on success
-        if: success()
-        run: |
-          git push origin --delete "${{ github.head_ref }}-screenshot-verify-failures" 2>/dev/null \
-            || echo "No failures branch to clean up."
+          rows = []
+          for diff_path in diff_files:
+              name = os.path.basename(diff_path)
+              test_name = name.replace(".png", "")
+              golden_path = os.path.join(snapshots_dir, name)
+              rows.append(f"""
+                <tr><td colspan="2" class="test-name">{test_name}</td></tr>
+                <tr>
+                  <td><span class="label">Expected</span><br><img src="{data_uri(golden_path)}" alt="expected"></td>
+                  <td><span class="label">Diff</span><br><img src="{data_uri(diff_path)}" alt="diff"></td>
+                </tr>""")
+
+          body = "\n".join(rows) if rows else "<tr><td colspan='2'>No diff images found.</td></tr>"
+          count = len(diff_files)
+
+          html = f"""<!DOCTYPE html>
+          <html lang="en">
+          <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1">
+            <title>Screenshot Failures — PR #{pr_number}</title>
+            <style>
+              *, *::before, *::after {{ box-sizing: border-box; margin: 0; padding: 0 }}
+              body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+                      background: #f6f8fa; padding: 32px 24px; color: #1f2328 }}
+              header {{ margin-bottom: 28px }}
+              h1 {{ font-size: 22px; font-weight: 600; color: #d1242f; margin-bottom: 4px }}
+              .meta {{ font-size: 13px; color: #57606a }}
+              table {{ width: 100%; border-collapse: collapse; background: #fff;
+                       border: 1px solid #d0d7de; border-radius: 8px;
+                       overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,.08) }}
+              td {{ padding: 16px; border: 1px solid #d0d7de; vertical-align: top;
+                    width: 50%; text-align: center }}
+              .test-name {{ background: #f0f6fc; font-weight: 600; font-size: 13px;
+                             text-align: left; width: auto !important; color: #0969da }}
+              .label {{ display: inline-block; font-size: 11px; font-weight: 600;
+                         text-transform: uppercase; letter-spacing: .5px;
+                         color: #57606a; margin-bottom: 10px }}
+              img {{ max-width: 100%; height: auto; border: 1px solid #d0d7de;
+                     border-radius: 6px; display: block; margin: 0 auto }}
+            </style>
+          </head>
+          <body>
+            <header>
+              <h1>Screenshot Test Failures</h1>
+              <p class="meta">Branch: {head_ref} &nbsp;·&nbsp; PR: #{pr_number} &nbsp;·&nbsp; {count} failure(s)</p>
+            </header>
+            <table>{body}</table>
+          </body>
+          </html>"""
+
+          out = pathlib.Path("paparazzi-report")
+          out.mkdir(exist_ok=True)
+          (out / "index.html").write_text(html)
+          print(f"Report generated: {count} failure(s).")
+          PYEOF
+
+      - name: Deploy report to GitHub Pages
+        if: failure() && steps.snapshots.outputs.empty == 'false'
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: paparazzi-report
+          destination_dir: screenshots/pr-${{ github.event.pull_request.number }}
+          keep_files: true
+          commit_message: "chore: screenshot failure report for PR #${{ github.event.pull_request.number }} [skip ci]"
+
+      - name: Post failure comment on PR
+        if: failure() && steps.snapshots.outputs.empty == 'false'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const owner    = context.repo.owner;
+            const repo     = context.repo.repo;
+            const prNumber = context.issue.number;
+            const marker   = "<!-- paparazzi-screenshot-report -->";
+            const reportUrl = `https://${owner}.github.io/${repo}/screenshots/pr-${prNumber}/`;
+
+            const body = [
+              marker,
+              "## Screenshot Test Failures",
+              "",
+              `**\`${{ github.head_ref }}\`** has screenshot differences that need review.`,
+              "",
+              `### [View side-by-side failure report →](${reportUrl})`,
+              "",
+              "| | |",
+              "|---|---|",
+              "| **Expected** | Golden image stored in the repo |",
+              "| **Diff** | Highlighted pixels that changed |",
+              "",
+              "_If the changes are intentional, trigger the **Screenshot Tests — Record** workflow to update the goldens._",
+            ].join("\n");
+
+            // Update existing bot comment instead of creating a duplicate on re-run.
+            const { data: comments } = await github.rest.issues.listComments({
+              owner, repo, issue_number: prNumber,
+            });
+            const existing = comments.find(c => c.body.includes(marker));
+            if (existing) {
+              await github.rest.issues.updateComment({
+                owner, repo, comment_id: existing.id, body,
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner, repo, issue_number: prNumber, body,
+              });
+            }
