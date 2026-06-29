@@ -27,7 +27,7 @@ object DummyData {
         blueColorComponent = 255,
         academyLogoUrl = "https://example.com/logo.png",
         academyName = "Education",
-        learnerEmail = "user@mail.com",
+        learnerEmail = "user@email.com",
         style = WatermarkStyle.FIXED,
         rotationDegree = 0f,
     )
