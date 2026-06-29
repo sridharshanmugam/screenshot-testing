@@ -39,7 +39,24 @@ jobs:
       - name: Grant gradlew execute permission
         run: chmod +x gradlew
 
+      - name: Check snapshots directory
+        id: snapshots
+        run: |
+          mkdir -p app/src/test/snapshots
+          if [ -z "$(ls -A app/src/test/snapshots)" ]; then
+            echo "empty=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "empty=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: No goldens found
+        if: steps.snapshots.outputs.empty == 'true'
+        run: |
+          echo "::error::No golden screenshots found in app/src/test/snapshots/. Trigger the 'Screenshot Tests — Record' workflow to create the initial goldens."
+          exit 1
+
       - name: Verify screenshots
+        if: steps.snapshots.outputs.empty == 'false'
         run: ./gradlew verifyPaparazziDebug --stacktrace
 
       - name: Commit failure diffs to failures branch
