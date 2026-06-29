@@ -18,7 +18,7 @@ concurrency:
 
 jobs:
   record:
-    name: Record goldens → ${{ github.head_ref }}-screenshot-record
+    name: Record golden images → ${{ github.head_ref }}-screenshot-record
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -42,10 +42,10 @@ jobs:
       - name: Grant gradlew execute permission
         run: chmod +x gradlew
 
-      - name: Record Paparazzi goldens
+      - name: Record Paparazzi golden images
         run: ./gradlew recordPaparazziDebug --stacktrace
 
-      - name: Push goldens to screenshot-record branch
+      - name: Push golden images to screenshot-record branch
         env:
           RECORD_BRANCH: ${{ github.head_ref }}-screenshot-record
         run: |
@@ -63,5 +63,5 @@ jobs:
           # Branch off the current PR HEAD, commit only the golden changes,
           # then force-push so re-runs on the same PR always reflect the latest.
           git checkout -B "$RECORD_BRANCH"
-          git commit -m "chore: record Paparazzi goldens for ${{ github.head_ref }} [skip ci]"
+          git commit -m "chore: record Paparazzi golden images for ${{ github.head_ref }} [skip ci]"
           git push origin "$RECORD_BRANCH" --force-with-lease

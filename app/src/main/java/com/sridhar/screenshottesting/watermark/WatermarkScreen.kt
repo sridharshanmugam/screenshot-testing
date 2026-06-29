@@ -117,7 +117,7 @@ private fun WatermarkContent(
         ) {
             if (watermark.displayAcademyName && watermark.academyName != null) {
                 Text(
-                    text = watermark.academyName!!,
+                    text = watermark.academyName,
                     color = textColor,
                     fontSize = watermark.textSize.sp,
                     fontWeight = FontWeight.Bold,

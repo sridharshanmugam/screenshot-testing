@@ -18,10 +18,16 @@ jobs:
   verify:
     name: Verify Paparazzi screenshots
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
-      - name: Checkout
+      - name: Checkout PR branch
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+          token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
 
       - name: Set up JDK 21
         uses: actions/setup-java@v4
@@ -36,11 +42,29 @@ jobs:
       - name: Verify screenshots
         run: ./gradlew verifyPaparazziDebug --stacktrace
 
-      - name: Upload failure diffs
+      - name: Commit failure diffs to failures branch
         if: failure()
-        uses: actions/upload-artifact@v4
-        with:
-          name: paparazzi-failure-diffs-${{ github.run_number }}
-          path: '**/build/paparazzi/failures/'
-          retention-days: 7
-          if-no-files-found: ignore
+        env:
+          FAILURES_BRANCH: ${{ github.head_ref }}-screenshot-verify-failures
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          # Force-add failure diffs — build/ is gitignored so -f is required.
+          git add -f app/build/paparazzi/failures/
+
+          if git diff --staged --quiet; then
+            echo "::warning::Verify failed but no diff images were produced."
+            exit 0
+          fi
+
+          git checkout -B "$FAILURES_BRANCH"
+          git commit -m "chore: Paparazzi verify failures for ${{ github.head_ref }} [skip ci]"
+          git push origin "$FAILURES_BRANCH" --force-with-lease
+          echo "::error::Screenshot diffs committed to branch: $FAILURES_BRANCH"
+
+      - name: Delete failures branch on success
+        if: success()
+        run: |
+          git push origin --delete "${{ github.head_ref }}-screenshot-verify-failures" 2>/dev/null \
+            || echo "No failures branch to clean up."
